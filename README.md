@@ -1,1 +1,8 @@
-# -landing2-html-scss-gulp
+## Список использованных технологий
+* HTML
+* BEM-methodology
+* SASS
+* NPM
+* Gulp
+***
+

@@ -1,0 +1,62 @@
+.editor{
+  padding: 109px 0 68px;
+
+  &__container{
+    margin: 0 auto;
+  }
+
+  @include tablets-up{
+    padding: 137px 0 78px;
+  }
+
+  @include desktop-up{
+    padding: 106px 0 50px;
+  }
+
+  &__title{
+    color: $darken-text-color;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 26px;
+    line-height: 1.615;
+    margin: 0 0 7px;
+
+    @include tablets-up{
+      font-size: 42px;
+      margin: 0 0 13px;
+    }
+
+    @include desktop-up{
+      font-size: 54px;
+      margin: 0 0 7px;
+    }
+
+  }
+
+  &__desc{
+    font: 14px/20px $secondary-font;
+    text-align: center;
+    max-width: 922px;
+    margin: 0 auto 31px;
+    color: $primary-text-color;
+    opacity: .8;
+
+    @include tablets-up{
+      font-size: 21px;
+      line-height: 32px;
+    }
+
+  }
+
+  &__repo{
+    @include flex-wrap;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__repo-btn{
+    margin: 0 5px 20px;
+  }
+
+}

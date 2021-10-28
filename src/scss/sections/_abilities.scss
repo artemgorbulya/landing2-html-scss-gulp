@@ -1,0 +1,155 @@
+.abilities{
+  padding: 29px 0 22px;
+  background-color: #f4f4f4;
+
+  &__container{
+    margin: 0 auto;
+  }
+
+  @include tablets-up{
+    padding: 47px 0 44px;
+  }
+
+  @include desktop-up{
+    padding: 76px 0 55px;
+
+    &__container{
+      display: grid;
+      grid-template:
+              'list title' auto
+              'list image' 1fr / 42.083% 1fr;
+      gap: 0 8.091%;
+      align-items: start;
+    }
+
+  }
+
+  &__title {
+    color: $primary-color;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.1875;
+    margin: 0 0 33px;
+    text-align: center;
+
+    &::before {
+      content: "<";
+    }
+
+    &::after {
+      content: ">";
+    }
+
+    @include tablets-up{
+      font-size: 42px;
+      margin: 0 0 54px;
+    }
+
+    @include desktop-up{
+      font-size: 48px;
+      margin: 0 0 48px;
+      text-align: left;
+      grid-area: title;
+    }
+  }
+
+  &__list{
+    margin: 0 0 70px;
+    list-style: none;
+    padding: 0;
+
+    @include desktop-up{
+      grid-area: list;
+      margin: 0;
+    }
+
+    &-item{
+      text-align: center;
+      margin: 0 0 41px;
+      padding: 0;
+      list-style: none;
+
+      &:last-child{
+        margin: 0;
+      }
+
+      @include tablets-up{
+        display: flex;
+        text-align: left;
+      }
+
+    }
+
+    &-img{
+      margin: 0 0 20px;
+
+      @include tablets-up{
+        width: 112px;
+        flex-shrink: 0;
+        margin: 0 33px 20px 0;
+      }
+
+      @include desktop-up{
+        grid-area: image;
+      }
+
+      &-item{
+        display: block;
+        margin: 0 auto;
+
+        &--browser{
+          width: 111px;
+
+          @include tablets-up{
+            transform: translateX(10px);
+          }
+
+        }
+
+        &--trigger{
+          width: 90px;
+        }
+
+        &--test-tube{
+          width: 60px;
+        }
+
+        &--clock{
+          width: 71px;
+        }
+      }
+    }
+
+    &-subtitle{
+      font-size: 16px;
+      line-height: 21px;
+      margin: 0 0 8px;
+      font-weight: 400;
+    }
+
+    &-text{
+      color: $secondary-text-color;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+
+  &__section-img{
+    position: relative;
+    height: 348px;
+
+    @include tablets-up{
+      height: 475px;
+    }
+
+  }
+
+  &__section-img-item{
+    position: absolute;
+    height: 119.198%;
+    top: 0;
+    left: 0;
+    transform: translate(-2.443%, -4.24%);
+  }
+
+}

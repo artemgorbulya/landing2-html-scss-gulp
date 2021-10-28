@@ -1,0 +1,23 @@
+*{
+  box-sizing: border-box;
+}
+
+html,
+body{
+  font-family: $primary-font;
+  color: $primary-text-color;
+  font-size: 14px;
+  line-height: 21px;
+  overflow-x: hidden;
+}
+
+.container{
+  max-width: 1240px;
+  min-width: 320px;
+  padding: 0 15px;
+
+  @include tablets-up{
+    padding: 0 20px;
+  }
+
+}

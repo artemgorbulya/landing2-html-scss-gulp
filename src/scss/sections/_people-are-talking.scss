@@ -1,0 +1,103 @@
+.people-are-talking{
+  background-color: $bg-color;
+  background-image: url(../img/testmonials-bg.png);
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  @include background{
+    background-size: cover;
+    background-position: center bottom;
+  }
+
+  &__wrapper{
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+  &__title{
+    color: $title-color;
+    text-align: center;
+    font-family: $primary-font;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+
+    @include tablets-up{
+      font-size: 42px;
+    }
+
+    @include desktop-up{
+      font-size: 48px;
+    }
+
+  }
+  &__logo-text-wrapper{
+
+    @include tablets-up{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 90px;
+    }
+
+  }
+  &__bottom-text{
+    display: none;
+
+    @include tablets-up{
+      display: block;
+      color: $bottom-text-color;
+      font-style: $secondary-font;
+      font-weight: 400;
+      line-height: 22px;
+      max-width: 857px;
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__line{
+    height: 2px;
+    background-color: $line-text-color;
+
+  }
+}
+
+.people-are-talking-logo-text-box{
+  padding-bottom: 46px;
+
+  @include tablets-up{
+    width: 49%;
+    padding-bottom: 50px;
+  }
+
+  @include desktop-up{
+    width: 28%;
+    padding-bottom: 100px;
+  }
+
+  &__logo{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
+  &__text{
+    text-align: center;
+    color: $title-color;
+    font-family: $secondary-font;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 24px;
+
+  }
+
+}
+
+
+

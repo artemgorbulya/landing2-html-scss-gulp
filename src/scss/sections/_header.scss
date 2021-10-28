@@ -1,0 +1,257 @@
+
+.header{
+  text-align: center;
+  &__banner{
+    height: 750px;
+    background-image: url(../img/banner.png);
+    background-color: $bg-header-color;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+  &__menu{
+    background-color: $menu-bg-color;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+  }
+  &__textbox{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  &__title{
+    text-align: center;
+    font-family: $primary-font;
+    font-size: 48px;
+    font-weight: 700;
+    color: $tilte-color-text;
+    margin-top: 45px;
+
+    @include tablets-up{
+      font-size: 72px;
+      margin-top: 70px;
+    }
+
+    @include desktop-up{
+      font-size: 82px;
+      margin-top: 80px;
+    }
+  }
+  &__text{
+    text-align: center;
+    font-family: $primary-font;
+    font-size: 18px;
+    font-weight: 300;
+    color: $main-color;
+    text-transform: capitalize;
+    line-height: 33px;
+
+    @include tablets-up{
+      font-family: $secondary-font;
+      font-size: 24px;
+      text-transform: none;
+    }
+
+    @include desktop-up{
+      font-size: 30px;
+    }
+
+  }
+  &__small-text{
+    text-align: center;
+    font-family: $primary-font;
+    font-size: 14px;
+    font-weight: 300;
+    color: $grey-text;
+    text-transform: uppercase;
+    line-height: 33px;
+
+    @include tablets-up{
+      margin-top: 10px;
+    }
+
+    @include desktop-up{
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+  }
+  &__button-box{
+    position: relative;
+    top: -20px;
+    margin-bottom: -45px;
+
+    @include tablets-up{
+      position: relative;
+      top: -32px;
+      margin-bottom: -100px;
+    }
+
+  }
+
+  &__button-text{
+    font-family: $primary-font;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 10px;
+    color: $grey-text;
+
+    @include tablets-up{
+      margin-top: 10px;
+    }
+
+  }
+}
+
+.header-menu{
+  &__flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  &__logo{
+    cursor: pointer;
+
+    @include tablets-up{
+      display: flex;
+      justify-content: left;
+      align-items: center;
+    }
+
+  }
+  &__img-logo{
+    height: 41px;
+    width: 43px;
+    background-image: url(../img/navbar-logo.png) ;
+  }
+  &__logo:hover &__img-logo{
+    background-image: url("../img/logo-hover.png");
+  }
+  &__logo:hover &__logo-text{
+    @include tablets-up{
+      color: $tilte-color-text;
+    }
+  }
+  &__logo-text{
+    display: none;
+
+    @include tablets-up{
+      display: inherit;
+      color: $main-color;
+      text-transform: uppercase;
+      font-family: $secondary-font;
+      font-size: 24px;
+      font-weight: 700;
+      padding-left: 15px;
+    }
+
+  }
+  &__burger-menu{
+    cursor: pointer;
+
+    @include tablets-up{
+      display: none;
+    }
+
+  }
+  &__menu{
+    list-style-type: none;
+    padding-inline-start: 0px;
+    background-color: #333333;
+    width: calc(100% - 22px);
+    margin: 0 auto;
+    position: absolute;
+    top: 61px;
+    left: 10px;
+    max-width: 1200px;
+
+    @include tablets-up{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: inherit;
+      background-color: $menu-bg-color;
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 10px;
+    }
+
+  }
+  &__menu-item{
+    padding-top: 19px;
+    padding-bottom: 19px;
+    border-bottom: 2px solid #3b3b3b;
+    display: block;
+
+    @include tablets-up{
+      border: 0 solid transparent;
+      margin: 0;
+      padding: 0;
+    }
+
+    @include desktop-up{
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+  }
+  &__link-item{
+    color: $tilte-color-text;
+    text-decoration: none;
+    font-family: $primary-font;
+    font-size: 26px;
+    display: block;
+    box-sizing: border-box;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    @include tablets-up{
+      margin: 0;
+      padding: 0;
+      font-family: $primary-font;
+      font-size: 16px;
+      font-weight: 700;
+      color: $main-color;
+    }
+
+  }
+  &__link-item:hover{
+    color: $main-color;
+    border-left: 8px solid $main-color;
+    padding-left: 12px;
+
+    @include tablets-up{
+      border: 0 solid transparent;
+      margin: 0;
+      padding: 0;
+      color: $tilte-color-text;
+    }
+
+  }
+  .header-menu--for-desktop{
+    display: none;
+    @include desktop-up{
+      display: flex !important;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0;
+    }
+  }
+  .header-menu--for-tablet{
+    display: none;
+
+    @include tablets-up{
+      display: flex !important;
+    }
+
+    @include desktop-up{
+      display: none !important;
+    }
+
+  }
+}

@@ -1,0 +1,208 @@
+.pricelist{
+
+  background-color: #4a3b4e;
+  color: #fff;
+  padding: 22px 0 93px;
+
+  @include tablets-up{
+    padding: 27px 0 132px;
+    background: #4a3b4e url(../img/pricelist_md.jpg) no-repeat center -114px;
+    background-size: 100% auto;
+  }
+
+  @include desktop-up{
+    padding: 22px 0 149px;
+    background: #4a3b4e url(../img/pricelist_lg.jpg) no-repeat center -57px;
+    background-size: 100% auto;
+  }
+
+  &__container{
+    margin: 0 auto;
+  }
+
+  &__title{
+    text-align: center;
+    font-size: 28px;
+    line-height: 1.5;
+    font-weight: 700;
+    margin: 0 0 46px;
+
+    @include tablets-up{
+      font-size: 42px;
+      margin: 0 0 38px;
+    }
+
+    @include desktop-up{
+      font-size: 48px;
+      margin: 0 0 112px;
+    }
+
+  }
+
+  &__grid{
+    $gridWrapper: &;
+
+    display: grid;
+    grid-template-columns: repeat(1, 257px);
+    gap: 14px 0;
+    justify-content: center;
+
+    &-item{
+      background-color: rgba(255,255,255,.11);
+      text-align: center;
+
+      &--active{
+        margin: 0 -21px;
+        background-color: rgba(0,0,0,.13);
+      }
+
+    }
+
+    @include tablets-up{
+      grid-template-columns: repeat(auto-fit, 257px);
+      gap: 92px 48px;
+      max-width: 562px;
+      margin: 0 auto;
+
+      &-item{
+        display: flex;
+        flex-direction: column;
+
+        &--active{
+          margin: -50px -21px;
+        }
+      }
+    }
+
+    @include desktop-up{
+      display: flex;
+      justify-content: center;
+      max-width: none;
+      gap: 0;
+
+      &-item{
+        max-width: 257px;
+        margin: 0 7px;
+        flex-grow: 1;
+
+        &--active{
+          margin: -50px 7px;
+          max-width: 298px;
+        }
+      }
+    }
+
+    &-header {
+      font-size: 24px;
+      line-height: 30px;
+      padding: 33px 20px 34px;
+      text-transform: uppercase;
+      background-color: rgba(255,255,255,.06);
+      margin: 0 0 16px;
+
+      #{$gridWrapper}-item--active & {
+        background-color: rgba(0,0,0,.11);
+        padding: 40px 20px 41px;
+        margin: 0 0 9px;
+      }
+
+    }
+
+    &-price{
+      @include flex-wrap;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px 40px;
+      position: relative;
+      margin: 0 0 26px;
+
+      &::after{
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        background-color: $primary-color;
+      }
+
+      &-currency,
+      &-value{
+        font-size: 60px;
+        line-height: 90px;
+        margin: 0 0 2px;
+      }
+
+      &-term{
+        flex-shrink: 0;
+        width: 100%;
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 20px;
+        opacity: .3;
+      }
+
+      #{$gridWrapper}-item--active & {
+        margin: 0 0 32px;
+        padding: 0 20px 50px;
+
+        &-currency,
+        &-value{
+          font-size: 82px;
+          margin: 0 0 10px;
+        }
+      }
+
+    }
+
+    &-desc{
+      font-size: 16px;
+      line-height: 28px;
+      margin: 0 0 30px;
+      padding: 0 20px;
+
+      #{$gridWrapper}-item--active & {
+        line-height: 32px;
+        margin: 0;
+      }
+
+    }
+
+    &-footer{
+      padding: 0 20px 38px;
+
+      #{$gridWrapper}-item--active & {
+        padding: 0 20px 47px;
+      }
+
+      @include tablets-up{
+          margin-top: auto;
+      }
+    }
+
+    &-btn{
+      text-transform: uppercase;
+      font-size: 15px;
+      line-height: 16px;
+      padding: 13px 30px;
+      border-radius: 21px;
+      background-color: rgba(255,255,255,.15);
+      min-width: 160px;
+
+      #{$gridWrapper}-item--active & {
+        font-size: 16px;
+        padding: 18px 50px;
+        border-radius: 26px;
+      }
+
+      &:hover{
+        background-color: rgba(255,255,255,.7);
+        box-shadow: none;
+        color: #7f6d78;
+        font-weight: bold;
+      }
+    }
+
+  }
+}

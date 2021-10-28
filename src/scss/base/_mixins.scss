@@ -1,0 +1,38 @@
+//#region Media Queries
+
+@mixin phone-only {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablets-up {
+  @media screen and (min-width: 481px) {
+    @content;
+  }
+}
+
+@mixin tablets-only {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media screen and (min-width: 993px) {
+    @content;
+  }
+}
+
+@mixin background {
+  @media screen and (min-width: 1400px) {
+    @content;
+  }
+}
+
+//#endregion Media Queries
+
+@mixin flex-wrap{
+  display: flex;
+  flex-flow: row wrap;
+}
